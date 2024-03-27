@@ -1,0 +1,72 @@
+<html>
+    <body>
+        <div class=container>
+            <div id="content-list">
+                <h2><u>Simple Bucket List</u></h2>
+                <ul>
+                    <li>
+                        Visit Japan for a vacation at least once
+                    </li>
+                    <li>
+                        To develop at least one fighting game
+                    </li>
+                    <li>
+                        Win an archery competition
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <p>
+            Add to Bucket List: <input type="text" id="newActivity">
+        </p>
+
+        <button id="Button" onclick="addNewElement()">Add</button>
+        <button id="Button" onclick="changeFont()">Change Font</button>
+        <button id="Button" onclick="boldFont()">Bold Font</button>
+
+    </body>
+
+    <script>
+
+        function addNewElement() {
+            var myInput = document.getElementById("newActivity").value;
+            var ul = document.querySelector('ul');
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(myInput));
+            ul.appendChild(li);
+        }
+        var flag = true
+        function changeFont() {
+            let cont = document.getElementById('content-list')
+            cont.style.fontFamily=flag ? 'Verdana' : "Purisa"
+            flag = !flag; 
+        }
+        function boldFont() {
+            document.getElementById('content-list').style.fontWeight='bold'
+            let cont = document.getElementById('content-list')
+            cont.style.fontWeight=flag ? 'Bold' : "Normal"
+            flag = !flag; 
+        }
+
+    </script>
+
+    <style>
+
+        body {
+            background-image: url(assets/paper.png);
+            font-family: verdana;
+            padding: 5%;
+            max-width: 480px;
+            margin: auto;
+            text-align: center;
+            font-size: x-large;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            text-align: justify;
+        }
+
+    </style>
+</html>
